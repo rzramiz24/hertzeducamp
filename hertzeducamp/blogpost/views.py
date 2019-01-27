@@ -7,7 +7,7 @@ from django.utils import timezone
 def post_list(request):
 
     posts = Post.objects.filter(published_date__lte=timezone.now()).order_by('published_date')
-    return render(request, 'blogpost/index.html', {'posts' : posts})
+    return render(request, 'index.html', {'posts' : posts})
 
 
 def post_detail(request,pk):
