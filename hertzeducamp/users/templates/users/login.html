@@ -7,6 +7,9 @@
 <div class="form-group">
     {{form|crispy}}
 <button type="submit" class="btn btn-primary">Login</button>
+<small class="text-muted ml-2">
+  <a href="{% url 'password_reset'  %}">Forgot Password ?</a>
+</small>
 </form>
 </div>
 <div class="border-top pt-3">

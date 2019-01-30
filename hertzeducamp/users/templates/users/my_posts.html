@@ -1,0 +1,29 @@
+{% extends "blogpost/base.html" %}
+{% block content %}
+
+{% if user_posts %}
+
+{% for post in user_posts %}
+
+<article class="media content-section">
+  <div class="media-body">
+    <div class="article-metadata">
+
+      <h3><a class="article-title" href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h3>
+      <p class="article-content">{{post.text|linebreaksbr }}</p>
+      <p>published : {{post.published_date}}</p>
+    </div>
+
+  </div>
+</article>
+
+{% endfor %}
+{% else  %}
+
+<h1>You have no post to show.</h1>
+
+{% endif %}
+
+
+
+{% endblock content %}
